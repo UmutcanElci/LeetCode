@@ -1,5 +1,6 @@
 package LeetSolutions.SmallestEvenMultiple;
 //2413. Smallest Even Multiple
+
 public class Solution {
     public int smallestEvenMultiple(int n) {
         if(n % 2 == 0){

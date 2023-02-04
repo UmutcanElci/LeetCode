@@ -1,21 +1,20 @@
 package LeetSolutions.FindAllNumbersDisapppearedInArray;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+//448. Find All Numbers Disappeared in an Array
 public class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        int n = nums.length;
-        int count = 0;
-        List<Integer> a = new ArrayList<>();
-        while (count<n){
-            for (int i = 0; i<n;i++){
-                if (nums[i] == count){
-                    continue;
-                }else {
-                    a.add(count);
-                }
-                count++;
+        Set<Integer> s = new HashSet<>();
+        for (Integer t : nums){
+            s.add(t);
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 1; i<nums.length;i++){
+            if (!s.contains(i)){
+                list.add(i);
             }
         }
-        return a;
+        return list;
+
     }
 }
